@@ -1,0 +1,391 @@
+/* =====================================================
+   MisoHighlighter - Styles
+   Clean, modern UI for text highlighting extension
+   ===================================================== */
+
+/* ==================== HIGHLIGHTED TEXT ==================== */
+.miso-highlight {
+  background-color: #ffeb3b;
+  cursor: pointer;
+  position: relative;
+  transition: opacity 0.2s ease;
+}
+
+.miso-highlight:hover {
+  opacity: 0.85;
+}
+
+/* ==================== POPUP BASE STYLES ==================== */
+.miso-popup {
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 8px;
+  z-index: 999999;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  animation: popupFadeIn 0.15s ease-out;
+  pointer-events: auto; /* CRITICAL: Makes popup clickable */
+  user-select: none; /* Prevent text selection in popup */
+}
+
+@keyframes popupFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== POPUP BUTTONS ==================== */
+.miso-popup button {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 7px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  line-height: 1.4;
+  outline: none;
+}
+
+.miso-popup button:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+  color: #111827;
+}
+
+.miso-popup button:active {
+  background: #f3f4f6;
+  transform: scale(0.98);
+}
+
+.miso-popup button:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: #3b82f6;
+}
+
+/* ==================== HOVER POPUP (Minimal) ==================== */
+.miso-popup.hover-popup {
+  padding: 6px;
+  gap: 6px;
+}
+
+.miso-popup.hover-popup button {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.miso-popup.hover-popup button:hover {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+/* ==================== TOOLS POPUP (Full Menu) ==================== */
+.miso-popup.tools-popup {
+  flex-direction: column;
+  align-items: stretch;
+  padding: 8px;
+  min-width: 160px;
+  gap: 4px;
+}
+
+.miso-popup.tools-popup button {
+  text-align: left;
+  justify-content: flex-start;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.miso-popup.tools-popup button:hover {
+  background: #f3f4f6;
+}
+
+/* ==================== MINIMAL POPUP ==================== */
+.miso-popup.minimal-popup {
+  padding: 6px;
+}
+
+.miso-popup.minimal-popup button {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+/* ==================== COLOR PALETTE ==================== */
+.miso-color-palette {
+  display: none;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px;
+  max-width: 220px;
+  background: #ffffff;
+}
+
+.miso-color-palette.active {
+  display: flex;
+}
+
+.miso-color-option {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1px #d1d5db, 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+.miso-color-option:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 2px #3b82f6, 0 4px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+.miso-color-option:active {
+  transform: scale(1.05);
+}
+
+/* ==================== CONFIRMATION MODAL ==================== */
+.miso-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999999;
+  animation: modalFadeIn 0.2s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.miso-modal-content {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 12px;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.1);
+  animation: modalSlideIn 0.2s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.miso-modal-content h3 {
+  margin: 0 0 12px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.3;
+}
+
+.miso-modal-content p {
+  margin: 0 0 24px 0;
+  color: #6b7280;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.miso-modal-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.miso-modal-buttons button {
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  transition: all 0.15s ease;
+  outline: none;
+}
+
+.miso-modal-buttons button:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.miso-modal-buttons button.primary {
+  background: #ef4444;
+  color: #ffffff;
+  border-color: #ef4444;
+}
+
+.miso-modal-buttons button.primary:hover {
+  background: #dc2626;
+  border-color: #dc2626;
+}
+
+.miso-modal-buttons button:active {
+  transform: scale(0.98);
+}
+
+.miso-modal-buttons button:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* ==================== RESPONSIVE ADJUSTMENTS ==================== */
+@media (max-width: 640px) {
+  .miso-popup {
+    font-size: 13px;
+  }
+  
+  .miso-popup button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  
+  .miso-color-option {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .miso-modal-content {
+    padding: 20px;
+    max-width: 340px;
+  }
+  
+  .miso-modal-content h3 {
+    font-size: 18px;
+  }
+  
+  .miso-modal-content p {
+    font-size: 14px;
+  }
+}
+
+/* ==================== ACCESSIBILITY ==================== */
+.miso-popup button:focus-visible,
+.miso-color-option:focus-visible,
+.miso-modal-buttons button:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Ensure high contrast for accessibility */
+@media (prefers-contrast: high) {
+  .miso-popup {
+    border-width: 2px;
+    border-color: #000000;
+  }
+  
+  .miso-popup button {
+    border-width: 2px;
+  }
+  
+  .miso-color-option {
+    box-shadow: 0 0 0 2px #000000;
+  }
+}
+
+/* ==================== PRINT STYLES ==================== */
+@media print {
+  .miso-popup,
+  .miso-modal {
+    display: none !important;
+  }
+  
+  .miso-highlight {
+    background-color: #ffeb3b !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* ==================== DARK MODE SUPPORT ==================== */
+@media (prefers-color-scheme: dark) {
+  .miso-popup {
+    background: #1f2937;
+    border-color: #374151;
+  }
+  
+  .miso-popup button {
+    background: #374151;
+    border-color: #4b5563;
+    color: #f3f4f6;
+  }
+  
+  .miso-popup button:hover {
+    background: #4b5563;
+    border-color: #6b7280;
+  }
+  
+  .miso-popup.hover-popup button {
+    background: #3b82f6;
+    border-color: #3b82f6;
+  }
+  
+  .miso-modal {
+    background: rgba(0, 0, 0, 0.75);
+  }
+  
+  .miso-modal-content {
+    background: #1f2937;
+  }
+  
+  .miso-modal-content h3 {
+    color: #f9fafb;
+  }
+  
+  .miso-modal-content p {
+    color: #d1d5db;
+  }
+  
+  .miso-modal-buttons button {
+    background: #374151;
+    border-color: #4b5563;
+    color: #f3f4f6;
+  }
+  
+  .miso-modal-buttons button:hover {
+    background: #4b5563;
+  }
+  
+  .miso-modal-buttons button.primary {
+    background: #ef4444;
+    border-color: #ef4444;
+    color: #ffffff;
+  }
+}
