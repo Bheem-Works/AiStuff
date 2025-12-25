@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f1e8;
+  color: #2c2c2c;
+  font-family: Georgia, Garamond, serif;
+  line-height: 1.6;
+}
+
+#demoText {
+  text-transform: uppercase;
+}
+
+button {
+  background-color: #8b3a3a;
+  color: #f5f1e8;
+  border: 2px solid #d4af37;
+  padding: 12px 24px;
+  font-family: Georgia, Garamond, serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #d4af37;
+  color: #2c2c2c;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+input,
+textarea {
+  background-color: #fffbf7;
+  color: #2c2c2c;
+  border: 1px solid #d4af37;
+  padding: 10px;
+  font-family: Georgia, Garamond, serif;
+  border-radius: 4px;
+}
+
+h1,
+h2,
+h3 {
+  color: #8b3a3a;
+  margin-bottom: 16px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+}
+
+/* Translator controls — spacing + classical styling 🔧 */
+.container > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px; /* keeps consistent spacing between controls */
+  align-items: center;
+}
+
+#languageTranslator {
+  flex: 1 1 100%;
+  padding: 12px;
+  background: #fffbf7;
+  border: 1px solid #b08a5f; /* warm, antique border */
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
+
+label {
+  color: #6b3b3b; /* muted, old-paper tone */
+  font-size: 14px;
+  margin-right: 8px;
+}
+
+select {
+  padding: 8px;
+  border: 1px solid #b08a5f;
+  background: #fffaf2;
+  border-radius: 4px;
+}
+
+/* Make the translate button visually separated + classical */
+#buttonForTranslate {
+  margin-left: 8px; /* ensures it's not glued to previous element */
+  margin-top: 6px;
+  padding: 12px 24px;
+  background-color: #7a302f; /* deep, old-rose */
+  color: #fffbf7;
+  border: 2px solid #caa94f; /* antique gold */
+  border-radius: 6px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+  transition: transform 0.12s ease;
+}
+#buttonForTranslate:hover {
+  transform: translateY(-2px);
+  background-color: #caa94f;
+  color: #2c2c2c;
+}

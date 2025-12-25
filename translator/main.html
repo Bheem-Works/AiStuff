@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Language translator</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="demoText">Language translator</h1>
+      <div>
+        <input
+          type="text"
+          placeholder="Write the text"
+          id="languageTranslator"
+        />
+
+        <!-- Source (auto or explicit) -->
+        <label
+          ><input type="radio" name="source" id="auto" checked />
+          Auto-detect</label
+        >
+        <label><input type="radio" name="source" id="English" /> English</label>
+        <label><input type="radio" name="source" id="Nepali" /> Nepali</label>
+        <label><input type="radio" name="source" id="Hindi" /> Hindi</label>
+
+        <!-- Target selector: choose Nepali (Devanagari) or Hindi (Devanagari) -->
+        <label>
+          Target:
+          <select id="targetLanguage">
+            <option value="ne">Nepali (Devanagari)</option>
+            <option value="hi">Hindi (Devanagari)</option>
+            <option value="en">English</option>
+          </select>
+        </label>
+
+        <button id="buttonForTranslate">Translate</button>
+
+        <!-- Show the translated text  -->
+        <p id="translatedText" style="color: black"></p>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
