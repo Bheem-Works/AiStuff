@@ -103,3 +103,23 @@ select {
   background-color: #caa94f;
   color: #2c2c2c;
 }
+
+/* Save/Copy buttons + status */
+#saveButton,
+#copyButton {
+  margin-left: 8px;
+  padding: 10px 16px;
+  background: #6b2e2d;
+  border: 2px solid #caa94f;
+  color: #fffbf7;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.copy-status {
+  margin-left: 10px;
+  color: #2c7a2c;
+  font-weight: 600;
+  min-width: 120px;
+  display: inline-block;
+}

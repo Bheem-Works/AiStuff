@@ -27,7 +27,8 @@
   display: flex;
   gap: 8px;
   align-items: center;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
   font-size: 14px;
   animation: popupFadeIn 0.15s ease-out;
   pointer-events: auto; /* CRITICAL: Makes popup clickable */
@@ -271,26 +272,26 @@
   .miso-popup {
     font-size: 13px;
   }
-  
+
   .miso-popup button {
     padding: 6px 10px;
     font-size: 12px;
   }
-  
+
   .miso-color-option {
     width: 28px;
     height: 28px;
   }
-  
+
   .miso-modal-content {
     padding: 20px;
     max-width: 340px;
   }
-  
+
   .miso-modal-content h3 {
     font-size: 18px;
   }
-  
+
   .miso-modal-content p {
     font-size: 14px;
   }
@@ -310,11 +311,11 @@
     border-width: 2px;
     border-color: #000000;
   }
-  
+
   .miso-popup button {
     border-width: 2px;
   }
-  
+
   .miso-color-option {
     box-shadow: 0 0 0 2px #000000;
   }
@@ -326,7 +327,7 @@
   .miso-modal {
     display: none !important;
   }
-  
+
   .miso-highlight {
     background-color: #ffeb3b !important;
     -webkit-print-color-adjust: exact;
@@ -340,52 +341,81 @@
     background: #1f2937;
     border-color: #374151;
   }
-  
+
   .miso-popup button {
     background: #374151;
     border-color: #4b5563;
     color: #f3f4f6;
   }
-  
+
   .miso-popup button:hover {
     background: #4b5563;
     border-color: #6b7280;
   }
-  
+
   .miso-popup.hover-popup button {
     background: #3b82f6;
     border-color: #3b82f6;
   }
-  
+
   .miso-modal {
     background: rgba(0, 0, 0, 0.75);
   }
-  
+
   .miso-modal-content {
     background: #1f2937;
   }
-  
+
   .miso-modal-content h3 {
     color: #f9fafb;
   }
-  
+
   .miso-modal-content p {
     color: #d1d5db;
   }
-  
+
   .miso-modal-buttons button {
     background: #374151;
     border-color: #4b5563;
     color: #f3f4f6;
   }
-  
+
   .miso-modal-buttons button:hover {
     background: #4b5563;
   }
-  
+
   .miso-modal-buttons button.primary {
     background: #ef4444;
     border-color: #ef4444;
     color: #ffffff;
+  }
+}
+
+/* Temporary notification used when copying text */
+.miso-notification {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  background: rgba(16, 185, 129, 0.95); /* green-ish */
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.15);
+  z-index: 99999999;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial,
+    sans-serif;
+  transform-origin: bottom right;
+  animation: miso-notify 0.18s ease-out;
+}
+
+@keyframes miso-notify {
+  from {
+    transform: translateY(8px) scale(0.98);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
   }
 }
