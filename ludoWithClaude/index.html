@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ludo Game - 2 Players</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <div class="game-header">
+        <h1>Ludo Game</h1>
+        <div class="current-turn" id="currentTurn">
+          <span id="turnIndicator">Red's Turn</span>
+        </div>
+      </div>
+
+      <div class="game-board">
+        <!-- Red Home Area -->
+        <div class="home-area red-home">
+          <div class="home-title">RED</div>
+          <div class="token-container" id="redHome">
+            <div class="home-spot" data-color="red" data-index="0"></div>
+            <div class="home-spot" data-color="red" data-index="1"></div>
+            <div class="home-spot" data-color="red" data-index="2"></div>
+            <div class="home-spot" data-color="red" data-index="3"></div>
+          </div>
+        </div>
+
+        <!-- Top Path -->
+        <div class="path-section vertical-path top-path">
+          <div class="path-column left-column">
+            <div class="cell" data-pos="11"></div>
+            <div class="cell" data-pos="10"></div>
+            <div class="cell" data-pos="9"></div>
+            <div class="cell" data-pos="8"></div>
+            <div class="cell safe-spot" data-pos="7"></div>
+            <div class="cell" data-pos="6"></div>
+          </div>
+          <div class="path-column home-stretch red-stretch">
+            <div class="cell red-final" data-pos="R1"></div>
+            <div class="cell red-final" data-pos="R2"></div>
+            <div class="cell red-final" data-pos="R3"></div>
+            <div class="cell red-final" data-pos="R4"></div>
+            <div class="cell red-final" data-pos="R5"></div>
+            <div class="finish-triangle red-finish"></div>
+          </div>
+          <div class="path-column right-column">
+            <div class="cell" data-pos="12"></div>
+            <div class="cell star-spot" data-pos="13"></div>
+            <div class="cell" data-pos="14"></div>
+            <div class="cell" data-pos="15"></div>
+            <div class="cell" data-pos="16"></div>
+            <div class="cell" data-pos="17"></div>
+          </div>
+        </div>
+
+        <!-- Blue Home Area -->
+        <div class="home-area blue-home">
+          <div class="home-title">BLUE</div>
+          <div class="token-container" id="blueHome">
+            <div class="home-spot" data-color="blue" data-index="0"></div>
+            <div class="home-spot" data-color="blue" data-index="1"></div>
+            <div class="home-spot" data-color="blue" data-index="2"></div>
+            <div class="home-spot" data-color="blue" data-index="3"></div>
+          </div>
+        </div>
+
+        <!-- Left Path -->
+        <div class="path-section horizontal-path left-path">
+          <div class="path-row top-row">
+            <div class="cell" data-pos="50"></div>
+            <div class="cell" data-pos="51"></div>
+            <div class="cell star-spot" data-pos="0"></div>
+            <div class="cell" data-pos="1"></div>
+            <div class="cell" data-pos="2"></div>
+            <div class="cell" data-pos="3"></div>
+          </div>
+          <div class="path-row home-stretch red-stretch-h">
+            <div class="finish-triangle red-finish-h"></div>
+            <div class="cell red-final" data-pos="R5"></div>
+            <div class="cell red-final" data-pos="R4"></div>
+            <div class="cell red-final" data-pos="R3"></div>
+            <div class="cell red-final" data-pos="R2"></div>
+            <div class="cell red-final" data-pos="R1"></div>
+          </div>
+          <div class="path-row bottom-row">
+            <div class="cell" data-pos="49"></div>
+            <div class="cell" data-pos="48"></div>
+            <div class="cell" data-pos="47"></div>
+            <div class="cell" data-pos="46"></div>
+            <div class="cell safe-spot" data-pos="45"></div>
+            <div class="cell" data-pos="44"></div>
+          </div>
+        </div>
+
+        <!-- Center Area -->
+        <div class="center-area">
+          <div class="center-triangle red-tri"></div>
+          <div class="center-triangle blue-tri"></div>
+          <div class="center-circle"></div>
+        </div>
+
+        <!-- Right Path -->
+        <div class="path-section horizontal-path right-path">
+          <div class="path-row top-row">
+            <div class="cell" data-pos="18"></div>
+            <div class="cell safe-spot" data-pos="19"></div>
+            <div class="cell" data-pos="20"></div>
+            <div class="cell" data-pos="21"></div>
+            <div class="cell" data-pos="22"></div>
+            <div class="cell" data-pos="23"></div>
+          </div>
+          <div class="path-row home-stretch blue-stretch-h">
+            <div class="cell blue-final" data-pos="B1"></div>
+            <div class="cell blue-final" data-pos="B2"></div>
+            <div class="cell blue-final" data-pos="B3"></div>
+            <div class="cell blue-final" data-pos="B4"></div>
+            <div class="cell blue-final" data-pos="B5"></div>
+            <div class="finish-triangle blue-finish-h"></div>
+          </div>
+          <div class="path-row bottom-row">
+            <div class="cell" data-pos="30"></div>
+            <div class="cell" data-pos="29"></div>
+            <div class="cell" data-pos="28"></div>
+            <div class="cell" data-pos="27"></div>
+            <div class="cell star-spot" data-pos="26"></div>
+            <div class="cell" data-pos="25"></div>
+          </div>
+        </div>
+
+        <!-- Bottom Path -->
+        <div class="path-section vertical-path bottom-path">
+          <div class="path-column left-column">
+            <div class="cell" data-pos="43"></div>
+            <div class="cell" data-pos="42"></div>
+            <div class="cell" data-pos="41"></div>
+            <div class="cell" data-pos="40"></div>
+            <div class="cell star-spot" data-pos="39"></div>
+            <div class="cell" data-pos="38"></div>
+          </div>
+          <div class="path-column home-stretch blue-stretch">
+            <div class="finish-triangle blue-finish"></div>
+            <div class="cell blue-final" data-pos="B5"></div>
+            <div class="cell blue-final" data-pos="B4"></div>
+            <div class="cell blue-final" data-pos="B3"></div>
+            <div class="cell blue-final" data-pos="B2"></div>
+            <div class="cell blue-final" data-pos="B1"></div>
+          </div>
+          <div class="path-column right-column">
+            <div class="cell safe-spot" data-pos="33"></div>
+            <div class="cell" data-pos="34"></div>
+            <div class="cell" data-pos="35"></div>
+            <div class="cell" data-pos="36"></div>
+            <div class="cell" data-pos="37"></div>
+            <div class="cell" data-pos="31"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-controls">
+        <div class="dice-section">
+          <button class="dice-button" id="diceButton" onclick="rollDice()">
+            <div class="dice" id="dice">
+              <div class="dice-face">?</div>
+            </div>
+          </button>
+          <div class="dice-result" id="diceResult">Click to Roll</div>
+        </div>
+
+        <div class="game-actions">
+          <button class="btn-new-game" onclick="newGame()">New Game</button>
+          <button
+            class="btn-skip"
+            id="skipButton"
+            onclick="skipTurn()"
+            disabled
+          >
+            Skip Turn
+          </button>
+        </div>
+      </div>
+
+      <div class="message-box" id="messageBox"></div>
+    </div>
+
+    <div class="modal" id="winnerModal">
+      <div class="modal-content">
+        <h2 id="winnerText"></h2>
+        <button onclick="newGame()">Play Again</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

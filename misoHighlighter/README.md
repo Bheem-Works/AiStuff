@@ -29,3 +29,8 @@ Small Chrome extension to highlight text on web pages with hover and right-click
 
 - Highlights are re-applied by finding the Nth occurrence of the highlighted text. This works reasonably well but can mismatch if page changes significantly.
 - The script handles many edge cases but may need further tuning for complex DOMs.
+- Now need to save it to the history.
+
+## Problem; 
+- It is now working with the pdf project. 
+- The extension is running on the inner articles stuff. 

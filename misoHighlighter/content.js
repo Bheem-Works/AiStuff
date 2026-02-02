@@ -803,3 +803,7 @@
   // Initialize when script loads
   init();
 })();
+
+
+// Now, Reamining idea things:
+  // When the text is saved, it should be also has to be saved at the history; 
