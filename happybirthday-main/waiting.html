@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Waiting for Launch</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background: #0f0f0f;
+        color: #e0e0e0;
+        text-align: center;
+      }
+      .container {
+        border: 1px solid #333;
+        padding: 40px;
+        border-radius: 15px;
+        background: #1a1a1a;
+      }
+      .timer {
+        font-size: 3.5rem;
+        font-family: monospace;
+        color: #00d4ff;
+        margin: 20px;
+      }
+      #status-msg {
+        font-size: 1.2rem;
+        color: #888;
+      }
+      .hidden-link {
+        display: none;
+        color: #00d4ff;
+        margin-top: 20px;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Access Restricted</h1>
+      <p id="status-msg">Waiting for February 3rd Launch...</p>
+
+      <div class="timer" id="countdown">00:00:00</div>
+
+      <a id="nextLink" href="index.html" class="hidden-link"
+        >Click here to enter index.html</a
+      >
+    </div>
+
+    <script>
+      // 1. SET YOUR TARGET DATE HERE
+      // Format: "Month Day, Year Hours:Minutes:Seconds"
+      const targetDate = new Date("February 3, 2026 00:00:00").getTime();
+
+      const countdownDisplay = document.querySelector("#countdown");
+      const statusMsg = document.querySelector("#status-msg");
+      const nextLink = document.querySelector("#nextLink");
+      const destination = "index.html";
+
+      const checkTime = setInterval(() => {
+        // 2. Get the current time from the user's device
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        // 3. Logic if the time has already passed
+        if (distance <= 0) {
+          clearInterval(checkTime);
+          countdownDisplay.textContent = "00:00:00";
+          statusMsg.textContent = "Access Granted! Redirecting...";
+          nextLink.style.display = "inline-block"; // Show the link
+
+          // Automatically open the page
+          window.location.href = destination;
+          return;
+        }
+
+        // 4. Calculate hours, minutes, seconds for the countdown
+        const hrs = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        );
+        const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // 5. Update display
+        countdownDisplay.textContent = `${String(hrs).padStart(2, "0")}:${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+      }, 1000);
+    </script>
+  </body>
+</html>
