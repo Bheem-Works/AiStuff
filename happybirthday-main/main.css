@@ -1,0 +1,482 @@
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.song {
+  visibility: hidden;
+}
+
+.container {
+  height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  visibility: hidden;
+  width: 100vw;
+}
+
+.container > div {
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 20vh;
+}
+
+.one {
+  font-size: 4.5rem;
+}
+
+.one h1 {
+  margin: 0;
+  padding: 0 20px;
+}
+
+.one #name {
+  display: inline-block;
+}
+
+.two {
+  font-size: 1.2rem;
+  font-weight: lighter;
+  padding: 0 20px;
+}
+
+.three {
+  font-size: 3rem;
+  padding: 0 20px;
+}
+
+.three p {
+  margin: 0;
+}
+
+.four .text-box {
+  border: 3px solid #aaa;
+  border-radius: 5px;
+  margin: 0 auto;
+  padding: 15px;
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.text-box p {
+  margin: 0;
+  text-align: left;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.text-box span {
+  visibility: hidden;
+}
+
+.text-box .fake-btn {
+  background-color: rgb(21, 161, 237);
+  border-radius: 3px;
+  bottom: -45px;
+  color: #fff;
+  padding: .5rem 1rem;
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.text-box .fake-btn:hover {
+  background-color: rgb(18, 140, 207);
+}
+
+.five p {
+  font-size: 2rem;
+  left: 0;
+  position: absolute;
+  right: 0;
+  padding: 0 20px;
+}
+
+.idea-3 strong {
+  border-radius: 3px;
+  display: inline-block;
+  padding: 3px 5px;
+}
+
+.five .idea-5 {
+  font-size: 4rem;
+}
+
+.idea-5 span, .idea-6 span, .wish-hbd span {
+  display: inline-block;
+}
+
+.idea-6 span {
+  font-size: 15rem;
+}
+
+.six {
+  position: relative;
+  top: 10vh;
+  z-index: 1;
+}
+
+.six img {
+  display: inline-block;
+  height: 350px;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.six .hat {
+  left: 50%;
+  transform: translateX(-50%);
+  margin-left: 0;
+  position: absolute;
+  top: -35%;
+  width: 80px;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.baloons img {
+  display: inline-block;
+  position: absolute;
+}
+
+.baloons img:nth-child(even) {
+  left: -10%;
+}
+
+.baloons img:nth-child(odd) {
+  right: -10%;
+}
+
+.baloons img:nth-child(3n + 0) {
+  left: 30%;
+}
+
+.seven, .eight {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+.eight svg {
+  left: 0;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  width: 25px;
+  z-index: -1;
+}
+
+.eight svg:nth-child(1) {
+  fill: #bd6ecf;
+  left: 5vw;
+  top: 7vh;
+}
+
+.eight svg:nth-child(2) {
+  fill: #7dd175;
+  left: 35vw;
+  top: 23vh;
+}
+
+.eight svg:nth-child(3) {
+  fill: #349d8b;
+  left: 23vw;
+  top: 33vh;
+}
+
+.eight svg:nth-child(4) {
+  fill: #347a9d;
+  left: 57vw;
+  top: 43vh;
+}
+
+.eight svg:nth-child(5) {
+  fill: #c66053;
+  left: 7vw;
+  top: 68vh;
+}
+
+.eight svg:nth-child(6) {
+  fill: #bfaa40;
+  left: 77vw;
+  top: 42vh;
+}
+
+.eight svg:nth-child(7) {
+  fill: #e3bae8;
+  left: 83vw;
+  top: 68vh;
+}
+
+.eight svg:nth-child(8) {
+  fill: #8762cb;
+  left: 37vw;
+  top: 86vh;
+}
+
+.eight svg:nth-child(9) {
+  fill: #9a90da;
+  left: 87vw;
+  top: 94vh;
+}
+
+.wish-hbd {
+  font-size: 3em;
+  margin: 0;
+  text-transform: uppercase;
+  color: #ff69b4;
+}
+
+.wish h5 {
+  font-size: 2rem;
+  font-weight: lighter;
+  margin: 10px 0 0;
+}
+
+.nine p {
+  font-size: 2rem;
+  font-weight: lighter;
+  padding: 0 20px;
+}
+
+#replay {
+  cursor: pointer;
+  z-index: 3;
+  text-decoration: underline;
+  color: rgb(21, 161, 237);
+}
+
+#replay:hover {
+  color: rgb(18, 140, 207);
+}
+
+.last-smile {
+  font-size: 3rem;
+}
+
+/* Tablet Responsive */
+@media screen and (max-width: 768px) {
+  .one {
+    font-size: 3rem;
+  }
+
+  .two {
+    font-size: 1rem;
+  }
+
+  .three {
+    font-size: 2rem;
+  }
+
+  .text-box p {
+    font-size: 0.85rem;
+  }
+
+  .five .idea-5 {
+    font-size: 3rem;
+  }
+
+  .idea-6 span {
+    font-size: 10rem;
+  }
+
+  .six img {
+    height: 280px;
+  }
+
+  .six .hat {
+    width: 65px;
+    top: -30%;
+  }
+
+  .wish-hbd {
+    font-size: 2.5em;
+  }
+
+  .wish h5 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 500px) {
+  .container {
+    width: 100%;
+  }
+
+  .one {
+    font-size: 2.5rem;
+  }
+
+  .one #name {
+    display: block;
+    font-size: 2rem;
+  }
+
+  .two {
+    font-size: 0.9rem;
+  }
+
+  .three {
+    font-size: 1.8rem;
+  }
+
+  .four .text-box {
+    width: 90%;
+    padding: 12px;
+  }
+
+  .text-box p {
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .text-box .fake-btn {
+    bottom: -38px;
+    right: 5px;
+    padding: .4rem .8rem;
+    font-size: 0.9rem;
+  }
+
+  .five p {
+    font-size: 1.5rem;
+  }
+
+  .five .idea-5 {
+    font-size: 2.5rem;
+  }
+
+  .idea-5 span {
+    display: block;
+  }
+
+  .idea-6 span {
+    font-size: 8rem;
+  }
+
+  .six img {
+    height: 250px;
+  }
+
+  .six .hat {
+    width: 50px;
+    top: -25%;
+  }
+
+  .wish-hbd {
+    font-size: 2.2em;
+  }
+
+  .wish h5 {
+    font-size: 1.4rem;
+  }
+
+  .nine p {
+    font-size: 1.3rem;
+    font-weight: lighter;
+  }
+
+  .last-smile {
+    font-size: 2.5rem;
+  }
+}
+
+/* Extra small mobile devices */
+@media screen and (max-width: 375px) {
+  .one {
+    font-size: 2rem;
+  }
+
+  .one #name {
+    font-size: 1.6rem;
+  }
+
+  .two {
+    font-size: 0.85rem;
+  }
+
+  .three {
+    font-size: 1.5rem;
+  }
+
+  .text-box p {
+    font-size: 0.7rem;
+  }
+
+  .five p {
+    font-size: 1.3rem;
+  }
+
+  .five .idea-5 {
+    font-size: 2rem;
+  }
+
+  .idea-6 span {
+    font-size: 6rem;
+  }
+
+  .six img {
+    height: 220px;
+  }
+
+  .six .hat {
+    width: 45px;
+  }
+
+  .wish-hbd {
+    font-size: 1.8em;
+  }
+
+  .wish h5 {
+    font-size: 1.2rem;
+  }
+
+  .nine p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Landscape mode fixes */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  .container > div {
+    top: 10vh;
+  }
+
+  .six img {
+    height: 200px;
+  }
+
+  .six .hat {
+    width: 40px;
+    top: -20%;
+  }
+}
+
+/* High resolution displays */
+@media screen and (min-width: 1200px) {
+  .four .text-box {
+    max-width: 700px;
+  }
+
+  .text-box p {
+    font-size: 1.1rem;
+  }
+}
